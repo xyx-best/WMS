@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.baseinfo.mapper.WmsAreaMapper">
+
+    <select id="selectSumAreaSize" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT SUM(area_size) FROM wms_area
+        <if test="areaIds!= null">
+            where area_id in(
+            <foreach collection="areaIds" item="areaId" index="index" separator=",">
+                #{areaId}
+            </foreach>
+            )
+        </if>
+    </select>
+
+</mapper>

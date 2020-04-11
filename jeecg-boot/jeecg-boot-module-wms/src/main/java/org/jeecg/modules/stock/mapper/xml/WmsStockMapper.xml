@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.stock.mapper.WmsStockMapper">
+
+    <select id="selectSumStock" resultType="java.lang.Integer">
+        SELECT SUM(goods_quantity) FROM wms_stock
+        <if test="areaIds!= null">
+            where area_id in(
+            <foreach collection="areaIds" item="areaId" index="index" separator=",">
+                #{areaId}
+            </foreach>
+            )
+        </if>
+    </select>
+
+</mapper>
