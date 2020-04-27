@@ -1,79 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b286d902-77dc-440d-b32f-dca414b486c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/job/FinishStockin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/stock/WmsStockList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/stock/WmsStockList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+    <list default="true" id="cd93c843-5321-4c97-9292-8ef5a741734e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/layouts/UserLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/layouts/UserLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/page/GlobalHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/page/GlobalHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/tools/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/tools/Logo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/user/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/user/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/jeecg_boot_module_system_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/jeecg_boot_module_system_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/17387280-1797-4ed2-b4df-446109b8dac8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/17387280-1797-4ed2-b4df-446109b8dac8/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a7fde910-6c55-4110-b537-e626615b9891.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a7fde910-6c55-4110-b537-e626615b9891/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caee10ab-3ee1-4fa8-858c-96a42b1699ae.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caee10ab-3ee1-4fa8-858c-96a42b1699ae/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5016283-6e80-4cba-a08f-dcde706e4ba8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5016283-6e80-4cba-a08f-dcde706e4ba8/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_4_5_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_60.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_3_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_dysmsapi_1_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_ecs_4_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_ram_3_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_sts_3_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_oss_aliyun_sdk_oss_3_6_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_auth0_java_jwt_3_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_dynamic_datasource_spring_boot_starter_2_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_swagger_bootstrap_ui_1_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_microsoft_sqlserver_sqljdbc4_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_oracle_ojdbc6_11_2_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_puppycrawl_tools_checkstyle_8_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_33_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_33_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_33_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_33_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_33_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_33_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_bean_validators_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_47.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_saxon_Saxon_HE_9_8_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_6_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_scratchpad_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_boot_starter_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_crazycake_shiro_redis_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_7_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_23_1_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jeecgframework_autopoi_1_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jeecgframework_autopoi_web_1_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jeecgframework_boot_codegenerate_1_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jeecgframework_boot_online_form_2_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_quartz_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_21_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_25_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-base-common/jeecg-boot-base-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-base-common/jeecg-boot-base-common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-system/jeecg-boot-module-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-system/jeecg-boot-module-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/jeecgbootmodulewms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/jeecgbootmodulewms.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/SimuUtil/SimuUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/baseinfo/service/impl/WmsAreaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/baseinfo/service/impl/WmsAreaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/sqlutil/sqlutil.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/sqlutil/sqlutil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stock/service/IWmsStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stock/service/IWmsStockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stock/service/impl/WmsStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stock/service/impl/WmsStockServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/controller/WmsStockinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/controller/WmsStockinController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-base-common/jeecg-boot-base-common.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-system/jeecg-boot-module-system.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/job/MonitorStockin.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/job/MonitorStockin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/IWmsRackingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/IWmsRackingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/IWmsStockinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/IWmsStockinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/IWmsStockindtlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/IWmsStockindtlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/impl/WmsRackingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/impl/WmsRackingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/impl/WmsStockinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/impl/WmsStockinServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/impl/WmsStockindtlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/service/impl/WmsStockindtlServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/controller/WmsStockoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/controller/WmsStockoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/job/MonitorStockout.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/job/MonitorStockout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/IWmsPickingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/IWmsPickingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/IWmsStockoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/IWmsStockoutService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/IWmsStockoutdtlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/IWmsStockoutdtlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/impl/WmsPickingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/impl/WmsPickingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/impl/WmsStockoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/impl/WmsStockoutServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/impl/WmsStockoutdtlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockout/service/impl/WmsStockoutdtlServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/transaction/controller/WmsTransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/transaction/controller/WmsTransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/transaction/service/IWmsTransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/transaction/service/IWmsTransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/transaction/service/impl/WmsTransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/transaction/service/impl/WmsTransactionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/SimuUtil/SimuUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/baseinfo/service/impl/WmsAreaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/baseinfo/service/impl/WmsAreaServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/sqlutil/sqlutil.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/sqlutil/sqlutil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stock/service/IWmsStockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stock/service/IWmsStockService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stock/service/impl/WmsStockServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stock/service/impl/WmsStockServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/controller/WmsStockinController.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/controller/WmsStockinController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/META-INF/jeecgbootmodulewms.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/job/MonitorStockin.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/job/MonitorStockin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/IWmsRackingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/IWmsRackingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/IWmsStockinService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/IWmsStockinService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/IWmsStockindtlService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/IWmsStockindtlService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/impl/WmsRackingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/impl/WmsRackingServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/impl/WmsStockinServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/impl/WmsStockinServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/impl/WmsStockindtlServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockin/service/impl/WmsStockindtlServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/controller/WmsStockoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/controller/WmsStockoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/job/MonitorStockout.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/job/MonitorStockout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/IWmsPickingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/IWmsPickingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/IWmsStockoutService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/IWmsStockoutService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/IWmsStockoutdtlService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/IWmsStockoutdtlService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/impl/WmsPickingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/impl/WmsPickingServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/impl/WmsStockoutServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/impl/WmsStockoutServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/impl/WmsStockoutdtlServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/stockout/service/impl/WmsStockoutdtlServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/transaction/controller/WmsTransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/transaction/controller/WmsTransactionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/transaction/service/IWmsTransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/transaction/service/IWmsTransactionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/transaction/service/impl/WmsTransactionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-wms/target/classes/org/jeecg/modules/transaction/service/impl/WmsTransactionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-parent.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/jeecg-boot-module-system/target/" />
-    <ignored path="$PROJECT_DIR$/jeecg-boot-base-common/target/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/jeecg-boot-module-wms/target/" />
-    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+    <ignored path="$PROJECT_DIR$/jeecg-boot-base-common/target/" />
+    <ignored path="$PROJECT_DIR$/jeecg-boot-module-system/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/jeecg_boot_parent$JeecgApplication.ic" NAME="JeecgApplication Coverage Results" MODIFIED="1585901688333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.jeecg.*</FILTER>
-    </SUITE>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -88,11 +251,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="ExecutionTargetDialog">
-    <checked>
-      <node key="17387280-1797-4ed2-b4df-446109b8dac8" />
-    </checked>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="jeecg-boot-parent" />
@@ -210,13 +368,6 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>wmsLocList</find>
@@ -325,11 +476,15 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/apache-maven-3.6.1" />
+        <option name="localRepository" value="D:\m2\respository" />
+        <option name="mavenHome" value="D:/jeecg_H/apache-maven-3.5.2-bin/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\jeecg_H\apache-maven-3.5.2-bin\apache-maven-3.5.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
@@ -340,11 +495,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="25" />
-    <option name="width" value="1685" />
-    <option name="height" value="860" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-11" />
+    <option name="width" value="1380" />
+    <option name="height" value="731" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -354,6 +508,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -482,7 +637,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="DatabaseDriversLRU" value="sqlserver&#10;mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -491,8 +646,6 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587971636451" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -502,23 +655,6 @@
     <property name="project.structure.side.proportion" value="0.27126437" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
-  </component>
-  <component name="RebelAgentSelection">
-    <selection>jr</selection>
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.jeecg.modules.stockout.job" />
-      <recent name="org.jeecg.modules.sysmanage.job" />
-      <recent name="org.jeecg.modules.stockin.vo" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\jeecgboot\jeecg-boot-master\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\src\main\resources\db" />
-      <recent name="E:\jeecgboot\jeecg-boot-master\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\src\main\resources" />
-      <recent name="E:\jeecgboot\jeecg-boot-master\jeecg-boot-master\jeecg-boot\jeecg-boot-module-wms\src\main\java\org\jeecg\modules\stockout" />
-      <recent name="E:\jeecgboot\jeecg-boot-master\jeecg-boot-master\jeecg-boot\jeecg-boot-module-wms\src\main\java\org\jeecg\modules\stockin\service" />
-      <recent name="E:\jeecgboot\jeecg-boot-master\jeecg-boot-master\jeecg-boot\jeecg-boot-module-wms\src\main\java\org\jeecg\modules\stockin\service\impl" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -532,23 +668,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JeecgApplication">
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.jeecg.modules.demo.test.test" />
-      <module name="jeecg-boot-module-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.jeecg.modules.demo.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JeecgApplication#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/JeecgApplication.http">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="JeecgApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="jeecg-boot-module-system" />
       <extension name="coverage">
@@ -565,18 +685,16 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.JeecgApplication" />
-        <item itemvalue="Application.test" />
-        <item itemvalue="HTTP Request.JeecgApplication#1" />
       </list>
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration useDefault="false">C:\Users\asus\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b286d902-77dc-440d-b32f-dca414b486c6" name="Default Changelist" comment="" />
-      <created>1582677234635</created>
+      <changelist id="cd93c843-5321-4c97-9292-8ef5a741734e" name="Default Changelist" comment="" />
+      <created>1587052123926</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582677234635</updated>
@@ -685,8 +803,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-11" y="0" width="1380" height="731" extended-state="1" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50183153" side_tool="true" weight="0.2397882" />
       <window_info id="Designer" order="1" />
@@ -703,9 +820,9 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49848714" weight="0.33934426" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.2700491" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.5450082" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.4180328" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" weight="0.29016393" />
@@ -717,55 +834,51 @@
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.3289689" />
       <window_info anchor="bottom" id="Duplicate detector" order="18" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.32980332" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
-      <window_info anchor="right" id="JRebel Setup Guide" order="8" weight="0.32980332" />
-      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="10" weight="0.2624811" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.23152338" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.2189394" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981685" visible="true" weight="0.22768533" />
-      <window_info id="Structure" order="1" sideWeight="0.50183153" side_tool="true" weight="0.23600605" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988399" visible="true" weight="0.28072837" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.5011601" side_tool="true" weight="0.2094082" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info id="JRebel" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32569557" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5581015" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29787233" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32741934" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848256" weight="0.47580644" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49772382" visible="true" weight="0.3727422" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.5450082" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.22422259" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3289689" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="JRebel Executor" order="15" />
-      <window_info anchor="bottom" id="JRebel Console" order="16" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32903227" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32903227" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32903227" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5022762" weight="0.3448276" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.2322239" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="6" weight="0.0204236" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
-      <window_info anchor="right" id="JRebel Setup Guide" order="10" weight="0.32980332" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1292,7 +1405,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stock/service/impl/WmsStockServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-wms/src/main/java/org/jeecg/modules/stockin/entity/WmsStockindtl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3720">
           <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
@@ -1341,12 +1454,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>jeecg-boot-module-system:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.27126437" />
-                <option value="0.5" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1358,7 +1469,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.27126437" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1369,7 +1480,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.27126437" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1381,7 +1492,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.27126437" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1393,8 +1504,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.27126437" />
-                <option value="0.6" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1414,11 +1524,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>sqlite-jdbc-3.25.1</last-edited>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.27126437" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
