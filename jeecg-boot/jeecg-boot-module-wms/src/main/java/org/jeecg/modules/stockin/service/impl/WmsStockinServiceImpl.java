@@ -120,7 +120,7 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 		List<WmsArea> waList = wmsAreaService.queryByStrategy(wG);
 		if (waList.size() == 0) {
 			return Result.error("没有合适的区域能够存放货物!");
-		} else if (!wmsAreaService.isEnoughSize(waList, wmsStockindtl.getGoodsQuantity())){  // 判断是否能否又足够空间
+		} else if (!wmsAreaService.isEnoughSize(waList, wmsStockindtl.getGoodsQuantity())){  // 判断是否有足够空间
 			return Result.error("没有合适的区域能够存放货物!");
 		}
 

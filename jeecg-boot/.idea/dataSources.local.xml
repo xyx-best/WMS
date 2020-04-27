@@ -1,37 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="wms" uuid="17387280-1797-4ed2-b4df-446109b8dac8">
-      <database-info product="SQLite" version="3.25.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.25.1" dbms="SQLITE" exact-version="3.25.1">
+    <data-source name="SQL server" uuid="3f6bfac5-808b-4bd7-b888-5dfdd691c0e5">
+      <database-info product="Microsoft SQL Server" version="14.00.2027" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 7.4 for SQL Server" driver-version="7.4.1.0" dbms="MSSQL" exact-version="14.0.2027">
+        <extra-name-characters>$#@</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
-      <auth-required>false</auth-required>
-      <introspection-schemas>*:@</introspection-schemas>
+      <user-name>sa</user-name>
+      <introspection-schemas>@:@</introspection-schemas>
     </data-source>
-    <data-source name="test2" uuid="a7fde910-6c55-4110-b537-e626615b9891">
-      <database-info product="SQLite" version="3.25.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.25.1" dbms="SQLITE" exact-version="3.25.1">
-        <identifier-quote-string>&quot;</identifier-quote-string>
+    <data-source name="My SQL" uuid="3854e595-1d9d-4933-96eb-b278d10e279c">
+      <database-info product="MySQL" version="8.0.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" dbms="MYSQL" exact-version="8.0.17">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <auth-required>false</auth-required>
-      <introspection-schemas>*:@</introspection-schemas>
-    </data-source>
-    <data-source name="test2 [2]" uuid="e5016283-6e80-4cba-a08f-dcde706e4ba8">
-      <database-info product="SQLite" version="3.25.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.25.1" dbms="SQLITE" exact-version="3.25.1">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <auth-required>false</auth-required>
-      <introspection-schemas>*:@</introspection-schemas>
-    </data-source>
-    <data-source name="test3" uuid="caee10ab-3ee1-4fa8-858c-96a42b1699ae">
-      <database-info product="SQLite" version="3.25.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.25.1" dbms="SQLITE" exact-version="3.25.1">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <auth-required>false</auth-required>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>

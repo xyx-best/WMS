@@ -103,7 +103,6 @@ public class MonitorStockin implements Job {
             }
         }
 
-
     }
 
     private WmsStockindtl getWmsStockindtl(Map<String, Object> m, WmsStockin wmsStockin) {
@@ -141,6 +140,5 @@ public class MonitorStockin implements Job {
         wmsStockinService.save(wmsStockin);
         return wmsStockin;
     }
-
 
 }
