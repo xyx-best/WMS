@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -16,9 +17,9 @@ public class sqlutil {
     private JdbcTemplate jdbcTemplate;
 
     @DS("multi-datasource1")
-    public List<Map<String, Object>> getWmsStockinoutBySql(String sql){
-        List<Map<String, Object>> wmsin = jdbcTemplate.queryForList(sql);
-        return wmsin;
+    public List<Map<String, Object>> getInfoBySql(String sql){
+        List<Map<String, Object>> info = jdbcTemplate.queryForList(sql);
+        return info;
     }
 
     @DS("multi-datasource1")
@@ -40,5 +41,17 @@ public class sqlutil {
         Integer row = Integer.parseInt(site[2]);       //行数
         String sql = "insert into " + tbName + " values(" + rackLane + ", " + side +", "+column+", "+row + ", " + orderId +", " + trayNumber +")";
         jdbcTemplate.execute(sql);
+    }
+
+    @DS("multi-datasource1")
+    public void delAndInsFinished(String tbName, String trayNumber, Date finishDate) {
+        jdbcTemplate.execute("delete from " + tbName + " where tray_number = " + trayNumber);
+        jdbcTemplate.execute("insert into " + tbName + "_his(tray_number, finish_date) values('"
+                + trayNumber + "', '" + finishDate  +"')");
+    }
+
+    @DS("multi-datasource1")
+    public void delNullTNFinished(String tbName) {
+        jdbcTemplate.execute("delete from " + tbName + " where tray_number is null");
     }
 }

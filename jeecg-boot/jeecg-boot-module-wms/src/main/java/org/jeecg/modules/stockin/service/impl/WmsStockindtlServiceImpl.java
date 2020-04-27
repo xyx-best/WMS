@@ -31,7 +31,7 @@ public class WmsStockindtlServiceImpl extends ServiceImpl<WmsStockindtlMapper, W
 	}
 
 	@Override
-	public Map<String, List> queryByStockin(String id, String code) {
+	public Map<String, List> getByStockin(String id, String code) {
 		LambdaQueryWrapper<WmsStockindtl> query = new LambdaQueryWrapper<WmsStockindtl>();
 		query.eq(WmsStockindtl::getStockinId, id);
 		query.eq(WmsStockindtl::getStockinCode, code);
@@ -41,5 +41,13 @@ public class WmsStockindtlServiceImpl extends ServiceImpl<WmsStockindtlMapper, W
 		Map<String, List> m = new HashMap<>();
 		m.put("list",list);
 		return m;
+	}
+
+	@Override
+	public WmsStockindtl getByStockindtlId(String stockindtlId) {
+		LambdaQueryWrapper<WmsStockindtl> query = new LambdaQueryWrapper<WmsStockindtl>();
+		query.eq(WmsStockindtl::getStockindtlId, stockindtlId);
+		WmsStockindtl w = this.list(query).get(0);
+		return w;
 	}
 }

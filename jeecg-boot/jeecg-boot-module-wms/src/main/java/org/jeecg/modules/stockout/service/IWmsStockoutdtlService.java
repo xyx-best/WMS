@@ -16,8 +16,8 @@ public interface IWmsStockoutdtlService extends IService<WmsStockoutdtl> {
 	public List<WmsStockoutdtl> selectByMainId(String mainId);
 
 	/**
-	 * 根据入库ID和入库编码 查询入库明细表
+	 * 根据出库ID 查询出库明细表
 	 * @return
 	 */
-	Map<String, List> queryByStockout(String id, String code);
+	List<WmsStockoutdtl> getByStockoutdtlId(String stockoutdtlId);
 }

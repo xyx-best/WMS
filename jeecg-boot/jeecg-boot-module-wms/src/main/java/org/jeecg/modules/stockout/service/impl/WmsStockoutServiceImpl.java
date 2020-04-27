@@ -1,5 +1,6 @@
 package org.jeecg.modules.stockout.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.jeecg.modules.stockout.entity.WmsStockout;
 import org.jeecg.modules.stockout.entity.WmsStockoutdtl;
 import org.jeecg.modules.stockout.mapper.WmsStockoutdtlMapper;
@@ -78,6 +79,14 @@ public class WmsStockoutServiceImpl extends ServiceImpl<WmsStockoutMapper, WmsSt
 			wmsStockoutdtlMapper.deleteByMainId(wmsStockout.getStockoutId());
 			wmsStockoutMapper.deleteById(id);
 		}
+	}
+
+	@Override
+	public WmsStockout getByStockoutId(String stockoutId) {
+		LambdaQueryWrapper<WmsStockout> query = new LambdaQueryWrapper<WmsStockout>();
+		query.eq(WmsStockout::getStockoutId, stockoutId);
+		WmsStockout w = this.list(query).get(0);
+		return w;
 	}
 
 }

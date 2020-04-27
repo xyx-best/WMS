@@ -54,7 +54,7 @@ public class MonitorStockout implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
 
         //获取出库信息 分配货位
-        List<Map<String, Object>> wmsout = sqlutil.getWmsStockinoutBySql("select * from wms_stockout");
+        List<Map<String, Object>> wmsout = sqlutil.getInfoBySql("select * from wms_stockout");
         if (!wmsout.isEmpty()){
             for (Map<String, Object> m : wmsout) {
 
@@ -81,26 +81,26 @@ public class MonitorStockout implements Job {
                 wmsStockoutdtlService.updateById(wmsStockoutdtl);
 
                 //更新拣选单
-                QueryWrapper<WmsPicking> qWRs = new QueryWrapper<WmsPicking>();
-                qWRs.eq("sourcedtl_id", wmsStockoutdtl.getStockoutdtlId());
-                List<WmsPicking> wmsPkList = wmsPickingService.list(qWRs);
-                for (WmsPicking wp : wmsPkList) {
-                    wp.setPickingState("2");
-                    wp.setStockoutTime(new Date());
-
-                    //更新交易（历史）表
-                    QueryWrapper<WmsTransaction> queryWrapper = new QueryWrapper<WmsTransaction>();
-                    queryWrapper.eq("move_id", wp.getPickingId());
-                    WmsTransaction wmsTransaction = wmsTransactionService.getOne(queryWrapper);
-
-                    wmsTransaction.setTransactionState("1");
-                    wmsTransactionService.updateById(wmsTransaction);
-
-                    //添加交易历史记录
-                    WmsTransactionHis wmsTransactionHis = wmsTransactionService.copyToHis(wmsTransaction);
-                    wmsTransactionHisService.save(wmsTransactionHis);
-                }
-                wmsPickingService.updateBatchById(wmsPkList);
+//                QueryWrapper<WmsPicking> qWRs = new QueryWrapper<WmsPicking>();
+//                qWRs.eq("sourcedtl_id", wmsStockoutdtl.getStockoutdtlId());
+//                List<WmsPicking> wmsPkList = wmsPickingService.list(qWRs);
+//                for (WmsPicking wp : wmsPkList) {
+//                    wp.setPickingState("2");
+//                    wp.setStockoutTime(new Date());
+//
+//                    //更新交易（历史）表
+//                    QueryWrapper<WmsTransaction> queryWrapper = new QueryWrapper<WmsTransaction>();
+//                    queryWrapper.eq("move_id", wp.getPickingId());
+//                    WmsTransaction wmsTransaction = wmsTransactionService.getOne(queryWrapper);
+//
+//                    wmsTransaction.setTransactionState("1");
+//                    wmsTransactionService.updateById(wmsTransaction);
+//
+//                    //添加交易历史记录
+//                    WmsTransactionHis wmsTransactionHis = wmsTransactionService.copyToHis(wmsTransaction);
+//                    wmsTransactionHisService.save(wmsTransactionHis);
+//                }
+//                wmsPickingService.updateBatchById(wmsPkList);
             }
         }
     }

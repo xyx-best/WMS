@@ -1,5 +1,6 @@
 package org.jeecg.modules.stockin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.modules.baseinfo.entity.WmsArea;
 import org.jeecg.modules.baseinfo.entity.WmsGoods;
@@ -112,23 +113,28 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 
 	//执行入库
 	@Override
-	public Result<?> execStockin(WmsStockindtl wmsStockindtl, Map<String, Object> m){
-
+	public Map<String, Object> execStockin(WmsStockindtl wmsStockindtl, Map<String, Object> m){
+		//存储 success标志和 Result
+		Map<String, Object> map = new HashMap<>();
 		//获取对应的货物
 		WmsGoods wG = wmsGoodsService.queryByGoodsCode(wmsStockindtl.getGoodsCode());
 		//根据上架策略 查询 合适的区域
 		List<WmsArea> waList = wmsAreaService.queryByStrategy(wG);
 		if (waList.size() == 0) {
-			return Result.error("没有合适的区域能够存放货物!");
+			map.put("result", Result.error("没有合适的区域能够存放货物!"));
+			map.put("success", false);
+			return map;
 		} else if (!wmsAreaService.isEnoughSize(waList, wmsStockindtl.getGoodsQuantity())){  // 判断是否能否又足够空间
-			return Result.error("没有合适的区域能够存放货物!");
+			map.put("result", Result.error("没有足够的区域能够存放货物!"));
+			map.put("success", false);
+			return map;
 		}
 
 		//剩余需要入库的量
 		Integer restGoodsQuantity = wmsStockindtl.getGoodsQuantity();
 
 		//分配一个区域的货位，如果一个区域放不完，则放到第二个区域 ，第三个。。。
-		while (restGoodsQuantity >= 0 && waList.size()!=0) {
+		while (restGoodsQuantity >= 0 && waList.size() >= 0) {
 
 			//在可用的区域内随机取一个
 			Random rand = new Random();
@@ -156,7 +162,9 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 						locIdList.add(w.getLocId());
 				}
 			} else {
-				return Result.error("没有适合的空闲货位可分配!!!");
+				map.put("result", Result.error("没有适合的空闲货位可分配!"));
+				map.put("success", false);
+				return map;
 			}
 			//根据货位ID  查询库存，并计算出货位的空余存放量
 			Map<String,List<WmsStock>> wStockMap = wmsStockService.queryByIdList(locIdList, wG);
@@ -175,7 +183,9 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 					}
 				}
 				if (wmsLocList.isEmpty()) {
-					return Result.error("没有适合的空闲货位可分配!!!");
+					map.put("result", Result.error("没有适合的空闲货位可分配!"));
+					map.put("success", false);
+					return map;
 				}
 			}
 			Map<String, Integer> locVolUsedMap = new HashMap<>();    //已用的库存量
@@ -194,8 +204,11 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 			restGoodsQuantity = distributeLoc(restGoodsQuantity, wmsStockindtl, randArea, wmsLocList, locVolUsedMap, m);
 			waList.remove(randArea);
 		}
-		return Result.ok("生成记录成功！");
+		map.put("result", Result.ok("生成记录成功！"));
+		map.put("success", true);
+		return map;
 	}
+
 
 	/**
 	 * 分配1个/多个货位
@@ -215,8 +228,8 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 		//剩余的入库量（即还没有入库的货物量）
 		Integer rest = allGoodsQuantity;
 		List<WmsLoc> wmsLocList = wLL;
+		Random random = new Random();
 		while(sumVol<allGoodsQuantity&&wmsLocList.size()>=0){
-			Random random = new Random();
 			WmsLoc wl = wmsLocList.get(random.nextInt(wmsLocList.size()));
 			//只要多个货位空闲的大于要入库的货物量，则视为能入库
 			Integer free = wl.getLocVolume() - (locVolUsedMap.containsKey(wl.getLocId()) ? locVolUsedMap.get(wl.getLocId()) : 0);
@@ -288,12 +301,13 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 		wmsRacking.setGoodsQuantity(locRestVol);
 		wmsRacking.setGoodsLevel(wmsStockindtl.getGoodsLevel());
 		wmsRackingService.save(wmsRacking);  //  保存上架记录
-		WmsStock wmsStock = createWmsStock(wmsStockindtl, wmsLoc, wmsArea, locRestVol, (String)m.get("tray_number"));
 
-		if (m.containsKey("order_id")){
+		WmsStock wmsStock = createWmsStock(wmsStockindtl, wmsLoc, wmsArea, locRestVol, m != null ? (String)m.get("tray_number") : null);
+
+		if (m == null ? false : m.containsKey("order_id")){
 			sqlutil.saveSimuStockinout("simu_stockin", wmsArea.getAreaCode(), wmsLoc, (Integer) m.get("order_id"), (String)m.get("tray_number"));
-			wmsStock.setStockState("1");   //改变库存状态 为 已入库
-			wmsStockService.updateById(wmsStock);
+//			wmsStock.setStockState("1");   //改变库存状态 为 已入库
+//			wmsStockService.updateById(wmsStock);
 		}
 
 		//生成交易记录
@@ -356,4 +370,12 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 		wmsTransactionService.save(wmsTransaction);
 	}
 
+
+	@Override
+	public WmsStockin getByStockinId(String stockinId) {
+		LambdaQueryWrapper<WmsStockin> query = new LambdaQueryWrapper<WmsStockin>();
+		query.eq(WmsStockin::getStockinId, stockinId);
+		WmsStockin w = this.list(query).get(0);
+		return w;
+	}
 }

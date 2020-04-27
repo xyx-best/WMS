@@ -31,15 +31,10 @@ public class WmsStockoutdtlServiceImpl extends ServiceImpl<WmsStockoutdtlMapper,
 	}
 
 	@Override
-	public Map<String, List> queryByStockout(String id, String code) {
+	public List<WmsStockoutdtl> getByStockoutdtlId(String stockoutdtlId) {
 		LambdaQueryWrapper<WmsStockoutdtl> query = new LambdaQueryWrapper<WmsStockoutdtl>();
-		query.eq(WmsStockoutdtl::getStockoutId, id);
-		query.eq(WmsStockoutdtl::getStockoutCode, code);
-		List<WmsStockoutdtl> list = this.list(query);
-		// 调用wrapTreeDataToTreeList方法生成树状数据
-		//List<WmsWarehouse> listResult = FindsDepartsChildrenUtil.wrapTreeDataToTreeList(list);
-		Map<String, List> m = new HashMap<>();
-		m.put("list",list);
-		return m;
+		query.eq(WmsStockoutdtl::getStockoutdtlId, stockoutdtlId);
+		List<WmsStockoutdtl> w = this.list(query);
+		return w;
 	}
 }

@@ -7,10 +7,6 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jeecg.modules.baseinfo.service.IWmsAreaService;
-import org.jeecg.modules.baseinfo.service.IWmsGoodsService;
-import org.jeecg.modules.baseinfo.service.IWmsLocService;
-import org.jeecg.modules.stock.service.IWmsStockService;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.def.NormalExcelConstants;
 import org.jeecgframework.poi.excel.entity.ExportParams;
@@ -54,15 +50,6 @@ public class WmsStockinController {
     private IWmsStockindtlService wmsStockindtlService;
     @Autowired
     private IIdManageService idManageService;
-
-    @Autowired
-    private IWmsLocService wmsLocService;
-    @Autowired
-    private IWmsStockService wmsStockService;
-    @Autowired
-    private IWmsAreaService wmsAreaService;
-    @Autowired
-    private IWmsGoodsService wmsGoodsService;
 
     /**
      * 分页列表查询
@@ -268,8 +255,8 @@ public class WmsStockinController {
         String stockinId = wmsStockin.getStockinId();
         String stockinCode = wmsStockin.getStockinCode();
         //根据入库ID、编码查询入库明细记录
-        Map<String, List> m = wmsStockindtlService.queryByStockin(stockinId, stockinCode);
-        WmsStockindtl wmsStockindtl = null;
+        Map<String, List> m = wmsStockindtlService.getByStockin(stockinId, stockinCode);
+        WmsStockindtl wmsStockindtl;
         if (m.get("list").size() != 0) {
             //如果有入库明细记录 ，则暂时存放
             wmsStockindtl = (WmsStockindtl) m.get("list").get(0);
@@ -277,16 +264,17 @@ public class WmsStockinController {
             return Result.error("未找到对应入库明细记录");
         }
 
-        Result r = wmsStockinService.execStockin(wmsStockindtl, null);
+        Map<String, Object> map = wmsStockinService.execStockin(wmsStockindtl, null);
 
-        wmsStockin.setStockinState("2");
-        wmsStockinService.updateById(wmsStockin);
+        if ((boolean)map.get("success")){
+            wmsStockin.setStockinState("2");
+            wmsStockinService.updateById(wmsStockin);
 
-        //找到对应的 入库明细记录 并更新状态
-        WmsStockindtl wmsStockindtl1 = (WmsStockindtl) wmsStockindtlService.queryByStockin(wmsStockin.getStockinId(), wmsStockin.getStockinCode()).get("list").get(0);
-        wmsStockindtl.setStockinState("2");
-        wmsStockindtlService.updateById(wmsStockindtl);
+            //找到对应的 入库明细记录 并更新状态
+            wmsStockindtl.setStockinState("2");
+            wmsStockindtlService.updateById(wmsStockindtl);
+        }
 
-        return r;
+        return (Result<?>) map.get("result");
     }
 }

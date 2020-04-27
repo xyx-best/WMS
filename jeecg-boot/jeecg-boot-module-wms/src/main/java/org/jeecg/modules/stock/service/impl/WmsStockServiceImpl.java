@@ -219,8 +219,9 @@ public class WmsStockServiceImpl extends ServiceImpl<WmsStockMapper, WmsStock> i
                 }
             }
 
-            sqlutil.saveSimuStockinout("simu_stockout",ws.getAreaCode(), wmsLoc, orderId, ws.getTrayNumber());
-            this.removeById(ws.getId()); //将出库的库存删除
+            if (orderId != null)
+                sqlutil.saveSimuStockinout("simu_stockout",ws.getAreaCode(), wmsLoc, orderId, ws.getTrayNumber());
+//            this.removeById(ws.getId()); //将出库的库存删除
         }
         return false;
     }
@@ -244,7 +245,6 @@ public class WmsStockServiceImpl extends ServiceImpl<WmsStockMapper, WmsStock> i
         int c = this.count(query);
         return c;
     }
-
 
     /**
      * 赋值生成拣选记录和库存记录
@@ -308,5 +308,13 @@ public class WmsStockServiceImpl extends ServiceImpl<WmsStockMapper, WmsStock> i
 
         wmsStock.setStockState("2");
         updateById(wmsStock);
+    }
+
+    @Override
+    public WmsStock getByTrayNumber(String trayNumber) {
+        LambdaQueryWrapper<WmsStock> query = new LambdaQueryWrapper<WmsStock>();
+        query.eq(WmsStock::getTrayNumber, trayNumber);
+        WmsStock wmsStock = this.list(query).get(0);
+        return wmsStock;
     }
 }

@@ -19,5 +19,7 @@ public interface IWmsStockindtlService extends IService<WmsStockindtl> {
 	 * 根据入库ID和入库编码 查询入库明细表
 	 * @return
 	 */
-	Map<String, List> queryByStockin(String id, String code);
+	Map<String, List> getByStockin(String id, String code);
+
+	WmsStockindtl getByStockindtlId(String stockindtlId);
 }

@@ -47,6 +47,13 @@ public interface IWmsStockinService extends IService<WmsStockin> {
 	 * @param m
 	 * @return
 	 */
-	Result<?> execStockin(WmsStockindtl wmsStockindtl, Map<String, Object> m);
+	Map<String, Object> execStockin(WmsStockindtl wmsStockindtl, Map<String, Object> m);
+
+	/**
+	 * 根据stockinId查找wmsStockin
+	 * @param stockinId
+	 * @return
+	 */
+	WmsStockin getByStockinId(String stockinId);
 
 }

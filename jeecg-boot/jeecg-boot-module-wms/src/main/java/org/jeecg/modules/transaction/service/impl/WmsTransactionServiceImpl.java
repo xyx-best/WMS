@@ -1,5 +1,6 @@
 package org.jeecg.modules.transaction.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.jeecg.modules.transaction.entity.WmsTransaction;
 import org.jeecg.modules.transaction.entity.WmsTransactionHis;
 import org.jeecg.modules.transaction.mapper.WmsTransactionMapper;
@@ -52,5 +53,13 @@ public class WmsTransactionServiceImpl extends ServiceImpl<WmsTransactionMapper,
         wmsTransactionHis.setCreateTime(wmsTransaction.getCreateTime());
         wmsTransactionHis.setCreateBy(wmsTransaction.getCreateBy());
         return wmsTransactionHis;
+    }
+
+    @Override
+    public WmsTransaction getByStockId(String stockId) {
+        LambdaQueryWrapper<WmsTransaction> query = new LambdaQueryWrapper<WmsTransaction>();
+        query.eq(WmsTransaction::getStockId, stockId);
+        WmsTransaction wmsTransaction = this.list(query).get(0);
+        return wmsTransaction;
     }
 }

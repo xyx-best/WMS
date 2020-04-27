@@ -78,25 +78,29 @@ public class WmsAreaServiceImpl extends ServiceImpl<WmsAreaMapper, WmsArea> impl
 
     @Override
     public List<WmsArea> queryByStrategy(WmsGoods wmsGoods) {
-        LambdaQueryWrapper<WmsArea> query = new LambdaQueryWrapper<>();
-        //货物的规则 不为空
+        LambdaQueryWrapper<WmsArea> query = Wrappers.lambdaQuery(new WmsArea());
+        //查询条件： 启用状态的区域
         query.eq(WmsArea::getAreaState, "1");
 
+        //上架策略 不包含类别 / 包含类别且（类别为空或类别同一系列）
         query.and(l -> l.notLike(WmsArea::getRackingStrategy, "0")
                 .or(i -> i.like(WmsArea::getRackingStrategy, "0")
                         .and(k -> k.in(WmsArea::getAreaKind, wmsGoodsCategoryService.queryParentByChild(wmsGoods.getGoodsType()))
                                 .or(j -> j.isNull(WmsArea::getAreaKind)))));
 
+        //上架策略 不包含规格 / 包含规格且（规格为空或规格相同）
         query.and(l -> l.notLike(WmsArea::getRackingStrategy, "1")
                 .or(i -> i.like(WmsArea::getRackingStrategy, "1")
                         .and(k -> k.in(WmsArea::getRkstraSize, wmsGoods.getGoodsSize(),"")
                                 .or(j -> j.isNull(WmsArea::getRkstraSize)))));
 
+        //上架策略 不包含花色 / 包含花色且（花色为空或花色相同）
         query.and(l -> l.notLike(WmsArea::getRackingStrategy, "2")
                 .or(i -> i.like(WmsArea::getRackingStrategy, "2")
                         .and(k -> k.in(WmsArea::getRkstraColor, wmsGoods.getGoodsColor(),"")
                                 .or(j -> j.isNull(WmsArea::getRkstraColor)))));
 
+        query.orderByAsc(WmsArea::getAreaId);
         List<WmsArea> list = this.list(query);
         //没有上架策略的区域
         LambdaQueryWrapper<WmsArea> query2 = new LambdaQueryWrapper<WmsArea>();
@@ -121,7 +125,6 @@ public class WmsAreaServiceImpl extends ServiceImpl<WmsAreaMapper, WmsArea> impl
         Integer sumRest = (sumSize==null?0:sumSize) - (sumStock==null?0:sumStock);
 
         return sumRest >= 0;
-
     }
 
 }

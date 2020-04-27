@@ -237,6 +237,11 @@
             dataIndex: 'locName'
           },
           {
+            title:'托盘号',
+            align:"center",
+            dataIndex: 'trayNumber'
+          },
+          {
             title:'货物ID',
             align:"center",
             dataIndex: 'goodsId',

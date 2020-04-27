@@ -3,7 +3,6 @@ package org.jeecg.modules.stockin.job;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
-import org.jeecg.common.api.vo.Result;
 import org.jeecg.modules.baseinfo.entity.WmsGoods;
 import org.jeecg.modules.baseinfo.service.IWmsGoodsService;
 import org.jeecg.modules.sqlutil.sqlutil;
@@ -57,7 +56,7 @@ public class MonitorStockin implements Job {
     @GetMapping(value = "/list")
     public void execute(JobExecutionContext context) throws JobExecutionException {
         //获取入库信息 分配货位
-        List<Map<String, Object>> wmsin = sqlutil.getWmsStockinoutBySql("select * from wms_stockin");
+        List<Map<String, Object>> wmsin = sqlutil.getInfoBySql("select * from wms_stockin");
         if (!wmsin.isEmpty()) {
             for (Map<String, Object> m : wmsin) {
 
@@ -66,43 +65,46 @@ public class MonitorStockin implements Job {
                 WmsStockindtl wSD = getWmsStockindtl(m, wmsStockin);
 
                 //执行入库
-                wmsStockinService.execStockin(wSD, m);
+                Map<String, Object> map = wmsStockinService.execStockin(wSD, m);
+
+                if (!(boolean)map.get("success")){
+                    continue;
+                }
 
                 //删除记录
                 sqlutil.delAndInsWms("wms_stockin", m);
 
                 //更新入库总表
-                wmsStockin.setStockinState("3");
+                wmsStockin.setStockinState("2");
                 wmsStockinService.updateById(wmsStockin);
 
                 //入库明细记录 并更新状态
-                wSD.setStockinState("3");
+                wSD.setStockinState("2");
                 wmsStockindtlService.updateById(wSD);
 
                 //更新上架单
-                QueryWrapper<WmsRacking> qWRs = new QueryWrapper<WmsRacking>();
-                qWRs.eq("sourcedtl_id", wSD.getStockindtlId());
-                List<WmsRacking> wmsRkList = wmsRackingService.list(qWRs);
-                for (WmsRacking wr : wmsRkList) {
-                    wr.setRackingState("2");
-                    wr.setStockinTime(new Date());
-
-                    //更新交易（历史）表
-                    QueryWrapper<WmsTransaction> queryWrapper = new QueryWrapper<WmsTransaction>();
-                    queryWrapper.eq("move_id", wr.getRackingId());
-                    WmsTransaction wmsTransaction = wmsTransactionService.getOne(queryWrapper);
-
-                    wmsTransaction.setTransactionState("1");
-                    wmsTransactionService.updateById(wmsTransaction);
-
-                    //添加交易历史记录
-                    WmsTransactionHis wmsTransactionHis = wmsTransactionService.copyToHis(wmsTransaction);
-                    wmsTransactionHisService.save(wmsTransactionHis);
-                }
-                wmsRackingService.updateBatchById(wmsRkList);
+//                QueryWrapper<WmsRacking> qWRs = new QueryWrapper<WmsRacking>();
+//                qWRs.eq("sourcedtl_id", wSD.getStockindtlId());
+//                List<WmsRacking> wmsRkList = wmsRackingService.list(qWRs);
+//                for (WmsRacking wr : wmsRkList) {
+//                    wr.setRackingState("2");
+//                    wr.setStockinTime(new Date());
+//
+//                    //更新交易（历史）表
+//                    QueryWrapper<WmsTransaction> queryWrapper = new QueryWrapper<WmsTransaction>();
+//                    queryWrapper.eq("move_id", wr.getRackingId());
+//                    WmsTransaction wmsTransaction = wmsTransactionService.getOne(queryWrapper);
+//
+//                    wmsTransaction.setTransactionState("1");
+//                    wmsTransactionService.updateById(wmsTransaction);
+//
+//                    //添加交易历史记录
+//                    WmsTransactionHis wmsTransactionHis = wmsTransactionService.copyToHis(wmsTransaction);
+//                    wmsTransactionHisService.save(wmsTransactionHis);
+//                }
+//                wmsRackingService.updateBatchById(wmsRkList);
             }
         }
-
 
     }
 
@@ -141,6 +143,5 @@ public class MonitorStockin implements Job {
         wmsStockinService.save(wmsStockin);
         return wmsStockin;
     }
-
 
 }

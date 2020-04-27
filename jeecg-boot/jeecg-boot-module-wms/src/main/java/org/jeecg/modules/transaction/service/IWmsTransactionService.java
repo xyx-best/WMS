@@ -19,4 +19,11 @@ public interface IWmsTransactionService extends IService<WmsTransaction> {
      */
     WmsTransactionHis copyToHis(WmsTransaction wmsTransaction);
 
+    /**
+     * 根据库存ID 查找对应的 交易记录
+     * @param stockId
+     * @return
+     */
+    WmsTransaction getByStockId(String stockId);
+
 }

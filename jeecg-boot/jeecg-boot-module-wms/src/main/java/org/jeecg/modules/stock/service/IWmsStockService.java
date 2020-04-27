@@ -3,6 +3,7 @@ package org.jeecg.modules.stock.service;
 import org.jeecg.modules.baseinfo.entity.WmsGoods;
 import org.jeecg.modules.stock.entity.WmsStock;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.jeecg.modules.stockin.entity.WmsStockin;
 import org.jeecg.modules.stockout.entity.WmsStockoutdtl;
 
 import java.util.List;
@@ -61,5 +62,7 @@ public interface IWmsStockService extends IService<WmsStock> {
     Integer getCountByLocId(String locId);// 根据货位Id 查库存数
 
     Integer getCountByAreaId(String areaId);// 根据区域Id 查库存数
+
+    WmsStock getByTrayNumber(String trayNumber);
 
 }

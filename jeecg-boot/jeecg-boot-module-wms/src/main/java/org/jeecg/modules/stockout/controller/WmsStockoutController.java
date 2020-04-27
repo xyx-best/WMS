@@ -277,13 +277,12 @@ public class WmsStockoutController {
 		 }
 
 		 String stockoutId = wmsStockout.getStockoutId();
-		 String stockoutCode = wmsStockout.getStockoutCode();
-		 //根据出库ID、编码查询出库明细记录
-		 Map<String, List> m = wmsStockoutdtlService.queryByStockout(stockoutId, stockoutCode);
+		 //根据出库ID查询出库明细记录
+		 List<WmsStockoutdtl> m = wmsStockoutdtlService.getByStockoutdtlId(stockoutId);
 		 WmsStockoutdtl wmsStockoutdtl = null;
-		 if (m.get("list").size() != 0) {
+		 if (m.size() != 0) {
 			 //如果有出库明细记录 ，则暂时存放
-			 wmsStockoutdtl = (WmsStockoutdtl) m.get("list").get(0);
+			 wmsStockoutdtl = m.get(0);
 		 } else {
 			 return Result.error("未找到对应的出库明细记录");
 		 }

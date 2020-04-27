@@ -61,6 +61,7 @@ public class WmsTransactionController extends JeecgController<WmsTransaction, IW
 								   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
 								   HttpServletRequest req) {
 		QueryWrapper<WmsTransaction> queryWrapper = QueryGenerator.initQueryWrapper(wmsTransaction, req.getParameterMap());
+		queryWrapper.orderByDesc("transaction_id");
 		queryWrapper.orderByAsc("transaction_state");
 		Page<WmsTransaction> page = new Page<WmsTransaction>(pageNo, pageSize);
 		IPage<WmsTransaction> pageList = wmsTransactionService.page(page, queryWrapper);

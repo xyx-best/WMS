@@ -37,4 +37,6 @@ public interface IWmsStockoutService extends IService<WmsStockout> {
 	 * 批量删除一对多
 	 */
 	public void delBatchMain(Collection<? extends Serializable> idList);
+
+	public WmsStockout getByStockoutId(String stockoutId);
 }
