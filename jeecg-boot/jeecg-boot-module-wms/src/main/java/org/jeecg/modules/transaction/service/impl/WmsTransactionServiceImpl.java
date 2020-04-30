@@ -59,6 +59,7 @@ public class WmsTransactionServiceImpl extends ServiceImpl<WmsTransactionMapper,
     public WmsTransaction getByStockId(String stockId) {
         LambdaQueryWrapper<WmsTransaction> query = new LambdaQueryWrapper<WmsTransaction>();
         query.eq(WmsTransaction::getStockId, stockId);
+        query.orderByDesc(WmsTransaction::getCreateTime);
         WmsTransaction wmsTransaction = this.list(query).get(0);
         return wmsTransaction;
     }

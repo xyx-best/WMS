@@ -20,6 +20,6 @@ public interface WmsAreaMapper extends BaseMapper<WmsArea> {
      * @param areaIds
      * @return
      */
-    @Select("SELECT SUM(AREA_SIZE) FROM WMS_AREA WHERE AREA_ID IN (#{areaIds})")
+//    @Select("SELECT SUM(AREA_SIZE) FROM WMS_AREA WHERE AREA_ID IN (#{areaIds})")
     Integer selectSumAreaSize(@Param("areaIds")List<String> areaIds);
 }

@@ -59,6 +59,7 @@ public class FinishStockout implements Job {
                     //根据库存找到交易记录 修改交易状态为 历史
                     WmsTransaction wmsTransaction = wmsTransactionService.getByStockId(wmsStock.getStockId());
                     wmsTransaction.setTransactionState("1");
+                    wmsTransactionService.updateById(wmsTransaction);
 
                     //添加交易历史记录
                     WmsTransactionHis wmsTransactionHis = wmsTransactionService.copyToHis(wmsTransaction);

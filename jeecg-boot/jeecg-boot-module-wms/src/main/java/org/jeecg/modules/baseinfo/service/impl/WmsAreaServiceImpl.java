@@ -124,7 +124,7 @@ public class WmsAreaServiceImpl extends ServiceImpl<WmsAreaMapper, WmsArea> impl
         //全部区域 的可用空闲量=区域总大小 - 已用的库存总和
         Integer sumRest = (sumSize==null?0:sumSize) - (sumStock==null?0:sumStock);
 
-        return sumRest >= 0;
+        return sumRest >= allQuantity;
     }
 
 }
