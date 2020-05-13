@@ -14,4 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface WmsLocMapper extends BaseMapper<WmsLoc> {
 
+    Integer selectSizeByIds(@Param("difIds")List<String> difIds);
 }

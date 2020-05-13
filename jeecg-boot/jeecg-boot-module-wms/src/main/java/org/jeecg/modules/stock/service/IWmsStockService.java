@@ -63,6 +63,9 @@ public interface IWmsStockService extends IService<WmsStock> {
 
     Integer getCountByAreaId(String areaId);// 根据区域Id 查库存数
 
-    WmsStock getByTrayNumber(String trayNumber);
+    WmsStock getByTrayNumber(String trayNumber); //根据托盘号查库存
 
+    List<Map<String, Integer>> queryByTime(String type);
+
+    List<Map<String, Integer>> queryByRange(String start, String end);
 }

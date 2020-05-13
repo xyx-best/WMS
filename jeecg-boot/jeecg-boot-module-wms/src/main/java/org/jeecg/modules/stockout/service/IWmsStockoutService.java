@@ -39,4 +39,7 @@ public interface IWmsStockoutService extends IService<WmsStockout> {
 	public void delBatchMain(Collection<? extends Serializable> idList);
 
 	public WmsStockout getByStockoutId(String stockoutId);
+
+    WmsStockout getByStockoutCode(String stockout_code);
 }
+

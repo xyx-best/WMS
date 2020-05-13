@@ -1,6 +1,7 @@
 package org.jeecg.modules.stock.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.jeecg.modules.baseinfo.entity.WmsArea;
 import org.jeecg.modules.baseinfo.entity.WmsGoods;
 import org.jeecg.modules.baseinfo.entity.WmsLoc;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -42,6 +44,8 @@ public class WmsStockServiceImpl extends ServiceImpl<WmsStockMapper, WmsStock> i
     private IWmsAreaService wmsAreaService;
     @Autowired
     private sqlutil sqlutil;
+    @Autowired
+    private WmsStockMapper wmsStockMapper;
 
     /**
      * 根据货位ID 批量查询库存
@@ -221,6 +225,7 @@ public class WmsStockServiceImpl extends ServiceImpl<WmsStockMapper, WmsStock> i
 
             if (orderId != null)
                 sqlutil.saveSimuStockinout("simu_stockout",ws.getAreaCode(), wmsLoc, orderId, ws.getTrayNumber());
+
 //            this.removeById(ws.getId()); //将出库的库存删除
         }
         return false;
@@ -314,7 +319,41 @@ public class WmsStockServiceImpl extends ServiceImpl<WmsStockMapper, WmsStock> i
     public WmsStock getByTrayNumber(String trayNumber) {
         LambdaQueryWrapper<WmsStock> query = new LambdaQueryWrapper<WmsStock>();
         query.eq(WmsStock::getTrayNumber, trayNumber);
-        WmsStock wmsStock = this.list(query).get(0);
-        return wmsStock;
+        List<WmsStock> wmsStockList = this.list(query);
+        if (wmsStockList.size() == 0) {
+            return null;
+        }
+        return wmsStockList.get(0);
+    }
+
+
+    @Override
+    public List<Map<String, Integer>> queryByTime(String type) {
+        List<Map<String, Integer>> list = null;
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String time = format.format(new Date());
+        if (type.equals("Y")){
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy");
+//            String year = format.format(new Date());
+            list = wmsStockMapper.selectByTime(time, "%m", "%Y");
+        }
+        else if (type.equals("M")){
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
+//            String month = format.format(new Date());
+            list = wmsStockMapper.selectByTime(time, "%m-%d", "%Y-%m");
+        }
+        else if (type.equals("D")){
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+//            String day = format.format(new Date());
+            list = wmsStockMapper.selectByTime(time, "%m-%d %H:00", "%Y-%m-%d");
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<Map<String, Integer>> queryByRange(String start, String end) {
+        List<Map<String, Integer>> list = wmsStockMapper.selectByRangeTime(start, end);
+        return list;
     }
 }

@@ -152,4 +152,14 @@ public class WmsStockoutdtlController extends JeecgController<WmsStockoutdtl, IW
         return super.importExcel(request, response, WmsStockoutdtl.class);
     }
 
+	 /**
+	  * 获取最近7天的入库量
+	  * @param req
+	  * @return
+	  */
+	 @GetMapping(value = "/getStockoutQuantityLastDays")
+	 public Result<?> getStockoutQuantityLastDays(HttpServletRequest req){
+		 List<Map<String, Object>> map = wmsStockoutdtlService.queryLastDays();
+		 return Result.ok(map);
+	 }
 }

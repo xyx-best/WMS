@@ -13,4 +13,51 @@
         </if>
     </select>
 
+    <select id="selectSumStockWithLevel" resultType="java.lang.Integer">
+        SELECT SUM(goods_quantity) FROM wms_stock
+        <if test="areaIds!= null">
+            where area_id in(
+            <foreach collection="areaIds" item="areaId" index="index" separator=",">
+                #{areaId}
+            </foreach>
+            )
+            and goods_level = #{level}
+        </if>
+    </select>
+
+    <select id="selectByTime" resultType="map">
+        select DATE_FORMAT(update_time, #{format1}) as time, sum(goods_quantity) as quantity
+        from wms_stock
+        where stock_state = '1' and DATE_FORMAT( update_time, #{format2} ) = DATE_FORMAT( #{date} , #{format2} )
+        GROUP BY DATE_FORMAT(update_time, #{format1}) ORDER BY update_time
+    </select>
+
+    <select id="selectByRangeTime" resultType="map">
+        select DATE_FORMAT(update_time, '%m-%d') as time, sum(goods_quantity) as quantity
+        from
+            wms_stock
+        where
+            stock_state = '1'
+            and
+            DATE_FORMAT( update_time, '%Y-%m-%d' )
+            BETWEEN
+            DATE_FORMAT( #{start} , '%Y-%m-%d' )
+            AND
+            DATE_FORMAT( #{end} , '%Y-%m-%d' )
+        GROUP BY DATE_FORMAT(update_time, '%Y-%m-%d')
+        ORDER BY update_time;
+    </select>
+
+    <select id="selectLocIdWithLevelAndAreas" parameterType="java.lang.String"  resultType="java.lang.String">
+        select DISTINCT loc_id
+        from wms_stock
+        <if test="areaIds!= null">
+            where area_id in(
+            <foreach collection="areaIds" item="areaId" index="index" separator=",">
+                #{areaId}
+            </foreach>
+            )
+            and goods_level &lt;&gt;  #{goodsLevel}
+        </if>
+    </select>
 </mapper>

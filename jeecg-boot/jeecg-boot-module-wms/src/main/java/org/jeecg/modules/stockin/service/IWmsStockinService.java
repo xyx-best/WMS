@@ -56,4 +56,11 @@ public interface IWmsStockinService extends IService<WmsStockin> {
 	 */
 	WmsStockin getByStockinId(String stockinId);
 
+	/**
+	 * 根据stockinCode查找wmsStockin
+	 * @param stockinCode
+	 * @return
+	 */
+	WmsStockin getByStockinCode(String stockinCode);
+
 }

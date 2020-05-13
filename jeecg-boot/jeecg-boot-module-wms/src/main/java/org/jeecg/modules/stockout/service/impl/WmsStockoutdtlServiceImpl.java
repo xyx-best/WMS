@@ -37,4 +37,10 @@ public class WmsStockoutdtlServiceImpl extends ServiceImpl<WmsStockoutdtlMapper,
 		List<WmsStockoutdtl> w = this.list(query);
 		return w;
 	}
+
+	@Override
+	public List<Map<String, Object>> queryLastDays() {
+		List<Map<String, Object>> mList = wmsStockoutdtlMapper.selectSumLastDays();
+		return mList;
+	}
 }

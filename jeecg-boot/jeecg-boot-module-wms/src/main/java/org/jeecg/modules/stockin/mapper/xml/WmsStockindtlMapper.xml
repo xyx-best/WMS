@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.baseinfo.wmsStockin.mapper.WmsStockindtlMapper">
+<mapper namespace="org.jeecg.modules.stockin.mapper.WmsStockindtlMapper">
 
 	<delete id="deleteByMainId" parameterType="java.lang.String">
 		DELETE 
@@ -13,4 +13,9 @@
 		FROM  wms_stockindtl
 		WHERE
 			 stockin_id = #{mainId} 	</select>
+
+	<select id="selectSumLastDays" resultType="map">
+		SELECT DATE_FORMAT(create_time,'%m-%d') as date, sum(goods_quantity) as quantity FROM wms_stockindtl
+		where datediff(now(),create_time) &lt;= 6  group by day(create_time) order by create_time asc
+	</select>
 </mapper>

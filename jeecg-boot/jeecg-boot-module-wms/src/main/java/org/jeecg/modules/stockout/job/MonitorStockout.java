@@ -54,59 +54,53 @@ public class MonitorStockout implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
 
         //获取出库信息 分配货位
-        List<Map<String, Object>> wmsout = sqlutil.getInfoBySql("select * from wms_stockout");
-        if (!wmsout.isEmpty()){
+        List<Map<String, Object>> wmsout = sqlutil.getInfoBySqlWithOrderId("select * from wms_stockout", "wms_stockout");
+        if (!wmsout.isEmpty()) {
             for (Map<String, Object> m : wmsout) {
+                if (Integer.parseInt(m.get("has_read").toString()) == 1) {
+                    //组装 总表记录
+                    WmsStockout wmsStockout = wmsStockoutService.getByStockoutCode((String) m.get("stockout_code"));
+                    //组装明细记录
+                    WmsStockoutdtl wmsStockoutdtl = wmsStockoutdtlService.selectByMainId(wmsStockout.getStockoutId()).get(0);
+                    startStockOut(m, wmsStockout, wmsStockoutdtl);
 
-                //组装 总表记录
-                WmsStockout wmsStockout = getWmsStockout(m);
+                } else {
+                    //组装 总表记录
+                    WmsStockout wmsStockout = getWmsStockout(m);
+                    sqlutil.execute("update wms_stockout set stockout_code = '" + wmsStockout.getStockoutCode() + "' , has_read = 1 where order_id =  " + m.get("order_id"));
 
-                //组装明细记录
-                WmsStockoutdtl wmsStockoutdtl = getWmsStockoutdtl(m, wmsStockout);
-
-                //执行出库
-                if(wmsStockService.execStockout(wmsStockoutdtl, m)){
-                    continue;
+                    //组装明细记录
+                    WmsStockoutdtl wmsStockoutdtl = getWmsStockoutdtl(m, wmsStockout);
+                    startStockOut(m, wmsStockout, wmsStockoutdtl);
                 }
-
-                //删除simu_stockout的记录
-                sqlutil.delAndInsWms("wms_stockout", m);
-
-                //更新出库总表状态
-                wmsStockout.setStockoutState("2");
-                wmsStockoutService.updateById(wmsStockout);
-
-                //更新出库细表状态
-                wmsStockoutdtl.setStockoutState("2");
-                wmsStockoutdtlService.updateById(wmsStockoutdtl);
-
-                //更新拣选单
-//                QueryWrapper<WmsPicking> qWRs = new QueryWrapper<WmsPicking>();
-//                qWRs.eq("sourcedtl_id", wmsStockoutdtl.getStockoutdtlId());
-//                List<WmsPicking> wmsPkList = wmsPickingService.list(qWRs);
-//                for (WmsPicking wp : wmsPkList) {
-//                    wp.setPickingState("2");
-//                    wp.setStockoutTime(new Date());
-//
-//                    //更新交易（历史）表
-//                    QueryWrapper<WmsTransaction> queryWrapper = new QueryWrapper<WmsTransaction>();
-//                    queryWrapper.eq("move_id", wp.getPickingId());
-//                    WmsTransaction wmsTransaction = wmsTransactionService.getOne(queryWrapper);
-//
-//                    wmsTransaction.setTransactionState("1");
-//                    wmsTransactionService.updateById(wmsTransaction);
-//
-//                    //添加交易历史记录
-//                    WmsTransactionHis wmsTransactionHis = wmsTransactionService.copyToHis(wmsTransaction);
-//                    wmsTransactionHisService.save(wmsTransactionHis);
-//                }
-//                wmsPickingService.updateBatchById(wmsPkList);
             }
         }
     }
 
+    private void startStockOut(Map<String, Object> m, WmsStockout wmsStockout, WmsStockoutdtl wmsStockoutdtl) {
+        //执行出库
+        if (wmsStockService.execStockout(wmsStockoutdtl, m)) {
+//            if (m.get("stockout_code") == null) {
+//                sqlutil.execute("update wms_stockout set stockout_code = '" + wmsStockout.getStockoutCode() + "' where order_id =  " + m.get("order_id"));
+//            }
+            return;
+        }
+
+        //删除simu_stockout的记录
+        sqlutil.delAndInsWms("wms_stockout", m);
+
+        //更新出库总表状态
+        wmsStockout.setStockoutState("2");
+        wmsStockoutService.updateById(wmsStockout);
+
+        //更新出库细表状态
+        wmsStockoutdtl.setStockoutState("2");
+        wmsStockoutdtlService.updateById(wmsStockoutdtl);
+    }
+
     /**
      * 组装总表记录 出库的
+     *
      * @param m
      * @return
      */
@@ -125,6 +119,7 @@ public class MonitorStockout implements Job {
 
     /**
      * 组装 出库明细 记录
+     *
      * @param m
      * @param wmsStockout
      * @return
@@ -141,28 +136,28 @@ public class MonitorStockout implements Job {
             wmsStockoutdtl.setGoodsCode(m.get("goods_code").toString());
         }
         if (m.containsKey("goods_name")) {
-            wmsStockoutdtl.setGoodsName((String)m.get("goods_name"));
+            wmsStockoutdtl.setGoodsName((String) m.get("goods_name"));
         }
         if (m.containsKey("goods_size")) {
-            wmsStockoutdtl.setGoodsSize((String)m.get("goods_size"));
+            wmsStockoutdtl.setGoodsSize((String) m.get("goods_size"));
         }
         if (m.containsKey("goods_unit")) {
-            wmsStockoutdtl.setGoodsUnit((String)m.get("goods_unit"));
+            wmsStockoutdtl.setGoodsUnit((String) m.get("goods_unit"));
         }
         if (m.containsKey("goods_type")) {
-            wmsStockoutdtl.setGoodsType((String)m.get("goods_type"));
+            wmsStockoutdtl.setGoodsType((String) m.get("goods_type"));
         }
         if (m.containsKey("goods_color")) {
-            wmsStockoutdtl.setGoodsColor((String)m.get("goods_color"));
+            wmsStockoutdtl.setGoodsColor((String) m.get("goods_color"));
         }
         if (m.containsKey("goods_batchnumber")) {
-            wmsStockoutdtl.setGoodsBatchnumber((String)m.get("goods_batchnumber"));
+            wmsStockoutdtl.setGoodsBatchnumber((String) m.get("goods_batchnumber"));
         }
         if (m.containsKey("goods_quantity")) {
             wmsStockoutdtl.setGoodsQuantity((Integer) m.get("goods_quantity"));
         }
         if (m.containsKey("goods_level")) {
-            wmsStockoutdtl.setGoodsLevel((String)m.get("goods_level"));
+            wmsStockoutdtl.setGoodsLevel((String) m.get("goods_level"));
         }
 
         //保存

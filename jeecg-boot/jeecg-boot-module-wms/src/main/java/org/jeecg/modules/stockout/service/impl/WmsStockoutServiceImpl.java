@@ -89,4 +89,12 @@ public class WmsStockoutServiceImpl extends ServiceImpl<WmsStockoutMapper, WmsSt
 		return w;
 	}
 
+	@Override
+	public WmsStockout getByStockoutCode(String stockoutCode) {
+		LambdaQueryWrapper<WmsStockout> query = new LambdaQueryWrapper<WmsStockout>();
+		query.eq(WmsStockout::getStockoutCode, stockoutCode);
+		WmsStockout w = this.list(query).get(0);
+		return w;
+	}
+
 }

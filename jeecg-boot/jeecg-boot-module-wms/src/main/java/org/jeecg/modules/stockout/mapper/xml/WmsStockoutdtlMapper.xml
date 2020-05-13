@@ -13,4 +13,9 @@
 		FROM  wms_stockoutdtl
 		WHERE
 			 stockout_id = #{mainId} 	</select>
+
+	<select id="selectSumLastDays" resultType="map">
+		SELECT DATE_FORMAT(create_time,'%m-%d') as date, sum(goods_quantity) as quantity FROM wms_stockoutdtl
+		where datediff(now(),create_time) &lt;= 6 GROUP BY day(create_time) order by create_time asc
+	</select>
 </mapper>

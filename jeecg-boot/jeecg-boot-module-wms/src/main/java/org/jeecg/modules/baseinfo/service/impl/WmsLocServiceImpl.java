@@ -9,6 +9,7 @@ import org.jeecg.modules.baseinfo.entity.WmsLoc;
 import org.jeecg.modules.baseinfo.mapper.WmsLocMapper;
 import org.jeecg.modules.baseinfo.service.IWmsGoodsCategoryService;
 import org.jeecg.modules.baseinfo.service.IWmsLocService;
+import org.jeecg.modules.stock.entity.WmsStock;
 import org.jeecg.modules.sysmanage.util.IdManageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -29,6 +30,8 @@ public class WmsLocServiceImpl extends ServiceImpl<WmsLocMapper, WmsLoc> impleme
 
     @Autowired
     private IWmsGoodsCategoryService wmsGoodsCategoryService;
+    @Autowired
+    private WmsLocMapper wmsLocMapper;
 
     @Override
     public Map<String, List> queryList() {
@@ -126,5 +129,14 @@ public class WmsLocServiceImpl extends ServiceImpl<WmsLocMapper, WmsLoc> impleme
         qWG.eq(WmsLoc::getLocId, LocId);
         WmsLoc wmsLoc = getOne(qWG);
         return wmsLoc;
+    }
+
+    @Override
+    public Integer querySizeByIds(List<String> difIds) {
+        if (difIds.size() <= 0) {
+            return 0;
+        }
+        Integer s = wmsLocMapper.selectSizeByIds(difIds);
+        return s;
     }
 }

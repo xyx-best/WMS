@@ -38,4 +38,6 @@ public interface IWmsLocService extends IService<WmsLoc> {
     List<WmsLoc> queryByStrategy(WmsArea wmsArea, WmsGoods wmsGoods);
 
     WmsLoc queryByLocId(String LocId);
+
+    Integer querySizeByIds(List<String> difIds);
 }

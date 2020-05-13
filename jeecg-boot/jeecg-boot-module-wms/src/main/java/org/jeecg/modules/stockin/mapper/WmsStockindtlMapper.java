@@ -1,6 +1,7 @@
 package org.jeecg.modules.stockin.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.jeecg.modules.stockin.entity.WmsStockindtl;
@@ -25,5 +26,15 @@ public interface WmsStockindtlMapper extends BaseMapper<WmsStockindtl> {
 	@Delete("DELETE FROM WMS_STOCKINDTL WHERE STOCKIN_ID = #{mainId}")
 	public boolean deleteByMainId(@Param("mainId") String mainId);
 
+	/**
+	 * 根据入库总表ID 查询对应的 明细记录
+	 * @param mainId
+	 * @return
+	 */
 	public List<WmsStockindtl> selectByMainId(@Param("mainId") String mainId);
+
+	/**
+	 * 查询最近7天的每天的入库量
+	 */
+	public List<Map<String, Object>> selectSumLastDays();
 }

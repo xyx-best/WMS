@@ -124,10 +124,18 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 			map.put("result", Result.error("没有合适的区域能够存放货物!"));
 			map.put("success", false);
 			return map;
-		} else if (!wmsAreaService.isEnoughSize(waList, wmsStockindtl.getGoodsQuantity())){  // 判断是否能否又足够空间
-			map.put("result", Result.error("没有足够的区域能够存放货物!"));
-			map.put("success", false);
-			return map;
+		} else if (!wG.getRackingStrategy().contains("3")) {
+			if (!wmsAreaService.isEnoughSize(waList, wmsStockindtl.getGoodsQuantity())) {  // 判断是否能否又足够空间
+				map.put("result", Result.error("没有足够的区域能够存放货物!"));
+				map.put("success", false);
+				return map;
+			}
+		} else {
+			if (!wmsAreaService.isEnoughSizeWithLevel(waList, wmsStockindtl.getGoodsQuantity(), wmsStockindtl.getGoodsLevel())) {
+				map.put("result", Result.error("没有足够的区域能够存放货物!"));
+				map.put("success", false);
+				return map;
+			}
 		}
 
 		//剩余需要入库的量
@@ -375,6 +383,14 @@ public class WmsStockinServiceImpl extends ServiceImpl<WmsStockinMapper, WmsStoc
 	public WmsStockin getByStockinId(String stockinId) {
 		LambdaQueryWrapper<WmsStockin> query = new LambdaQueryWrapper<WmsStockin>();
 		query.eq(WmsStockin::getStockinId, stockinId);
+		WmsStockin w = this.list(query).get(0);
+		return w;
+	}
+
+	@Override
+	public WmsStockin getByStockinCode(String stockinCode) {
+		LambdaQueryWrapper<WmsStockin> query = new LambdaQueryWrapper<WmsStockin>();
+		query.eq(WmsStockin::getStockinCode, stockinCode);
 		WmsStockin w = this.list(query).get(0);
 		return w;
 	}

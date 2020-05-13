@@ -2,4 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.jeecg.modules.baseinfo.mapper.WmsLocMapper">
 
+    <select id="selectSizeByIds" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT SUM(loc_volume) FROM wms_loc
+        <if test="difIds!= null">
+            where loc_id in(
+            <foreach collection="difIds" item="locId" index="index" separator=",">
+                #{locId}
+            </foreach>
+            )
+        </if>
+    </select>
+
 </mapper>

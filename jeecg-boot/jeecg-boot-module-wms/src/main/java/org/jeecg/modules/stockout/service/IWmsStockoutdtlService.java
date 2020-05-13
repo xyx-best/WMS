@@ -20,4 +20,10 @@ public interface IWmsStockoutdtlService extends IService<WmsStockoutdtl> {
 	 * @return
 	 */
 	List<WmsStockoutdtl> getByStockoutdtlId(String stockoutdtlId);
+
+	/**
+	 * 查询最近7天的出库量
+	 * @return
+	 */
+	List<Map<String, Object>> queryLastDays();
 }

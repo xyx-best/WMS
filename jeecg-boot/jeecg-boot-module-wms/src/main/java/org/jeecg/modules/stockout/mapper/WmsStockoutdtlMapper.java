@@ -1,6 +1,8 @@
 package org.jeecg.modules.stockout.mapper;
 
 import java.util.List;
+import java.util.Map;
+
 import org.jeecg.modules.stockout.entity.WmsStockoutdtl;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
@@ -16,4 +18,9 @@ public interface WmsStockoutdtlMapper extends BaseMapper<WmsStockoutdtl> {
 	public boolean deleteByMainId(@Param("mainId") String mainId);
     
 	public List<WmsStockoutdtl> selectByMainId(@Param("mainId") String mainId);
+
+	/**
+	 * 查询最近7天的每天的出库量
+	 */
+	public List<Map<String, Object>> selectSumLastDays();
 }

@@ -1,6 +1,5 @@
 package org.jeecg.modules.baseinfo.service.impl;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.jeecg.common.constant.CommonConstant;
@@ -8,12 +7,11 @@ import org.jeecg.modules.baseinfo.entity.WmsArea;
 import org.jeecg.modules.baseinfo.entity.WmsGoods;
 import org.jeecg.modules.baseinfo.entity.WmsLoc;
 import org.jeecg.modules.baseinfo.mapper.WmsAreaMapper;
-import org.jeecg.modules.baseinfo.mapper.WmsGoodsCategoryMapper;
 import org.jeecg.modules.baseinfo.service.IWmsAreaService;
 import org.jeecg.modules.baseinfo.service.IWmsGoodsCategoryService;
+import org.jeecg.modules.baseinfo.service.IWmsLocService;
 import org.jeecg.modules.stock.mapper.WmsStockMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -35,6 +33,8 @@ public class WmsAreaServiceImpl extends ServiceImpl<WmsAreaMapper, WmsArea> impl
     private WmsAreaMapper wmsAreaMapper;
     @Autowired
     private WmsStockMapper wmsStockMapper;
+    @Autowired
+    private IWmsLocService wmsLocService;
 
     @Override
     public Map<String, List> queryList() {
@@ -125,6 +125,28 @@ public class WmsAreaServiceImpl extends ServiceImpl<WmsAreaMapper, WmsArea> impl
         Integer sumRest = (sumSize==null?0:sumSize) - (sumStock==null?0:sumStock);
 
         return sumRest >= allQuantity;
+    }
+
+    @Override
+    public boolean isEnoughSizeWithLevel(List<WmsArea> waList, Integer allQuantity, String goodsLevel) {
+        List<String> s = new ArrayList<>();
+        for (WmsArea a : waList) {
+            s.add(a.getAreaId());
+        }
+        //获取区域列表的大小总和
+        Integer sumSize = wmsAreaMapper.selectSumAreaSize(s);
+
+        //获取等级不等的库存记录
+        List<String> difIds = wmsStockMapper.selectLocIdWithLevelAndAreas(goodsLevel, s);
+        Integer sumDif = wmsLocService.querySizeByIds(difIds);
+
+        //获取等级相等的库存记录
+        Integer sumSame = wmsStockMapper.selectSumStockWithLevel(s, goodsLevel);
+
+        //可用 = 区域总量-等级不同货位的总量-等级相同的货位的库存量
+        Integer sumRest = sumSize - sumDif - sumSame;
+
+        return sumRest > allQuantity;
     }
 
 }

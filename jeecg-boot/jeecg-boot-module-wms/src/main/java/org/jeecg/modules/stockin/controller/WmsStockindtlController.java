@@ -1,6 +1,8 @@
 package org.jeecg.modules.stockin.controller;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jeecg.common.api.vo.Result;
@@ -143,5 +145,16 @@ public class WmsStockindtlController extends JeecgController<WmsStockindtl, IWms
     public Result<?> importExcel(HttpServletRequest request, HttpServletResponse response) {
         return super.importExcel(request, response, WmsStockindtl.class);
     }
+
+	 /**
+	  * 获取最近7天的入库量
+	  * @param req
+	  * @return
+	  */
+	@GetMapping(value = "/getStockinQuantityLastDays")
+    public Result<?> getStockinQuantityLastDays(HttpServletRequest req){
+		 List<Map<String, Object>> map = wmsStockindtlService.queryLastDays();
+		return Result.ok(map);
+	 }
 
 }

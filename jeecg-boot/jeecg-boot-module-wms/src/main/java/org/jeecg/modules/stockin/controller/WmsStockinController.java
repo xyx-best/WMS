@@ -255,11 +255,11 @@ public class WmsStockinController {
         String stockinId = wmsStockin.getStockinId();
         String stockinCode = wmsStockin.getStockinCode();
         //根据入库ID、编码查询入库明细记录
-        Map<String, List> m = wmsStockindtlService.getByStockin(stockinId, stockinCode);
+        List<WmsStockindtl> list = wmsStockindtlService.getByStockin(stockinId, stockinCode);
         WmsStockindtl wmsStockindtl;
-        if (m.get("list").size() != 0) {
+        if (list.size() != 0) {
             //如果有入库明细记录 ，则暂时存放
-            wmsStockindtl = (WmsStockindtl) m.get("list").get(0);
+            wmsStockindtl = list.get(0);
         } else {
             return Result.error("未找到对应入库明细记录");
         }

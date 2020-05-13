@@ -163,4 +163,23 @@ public class WmsStockController extends JeecgController<WmsStock, IWmsStockServi
         return super.importExcel(request, response, WmsStock.class);
     }
 
+	 /**
+	  * 根据时间范围 获取库存量
+	  * @param req
+	  * @return
+	  */
+	 @GetMapping(value = "/getStockInfoByTime")
+	 public Result<?> getStockInfoByTime(HttpServletRequest req){
+		 List<Map<String, Integer>> list = null;
+		 if (req.getParameterMap().containsKey("dateRange")) {
+			 String stime = req.getParameterMap().get("start")[0];
+			 String etime = req.getParameterMap().get("end")[0];
+			 list = wmsStockService.queryByRange(stime, etime);
+		 }
+		 if (req.getParameterMap().containsKey("type")) {
+			 list = wmsStockService.queryByTime(req.getParameterMap().get("type")[0]);
+		 }
+		 return Result.ok(list);
+	 }
+
 }

@@ -51,4 +51,6 @@ public interface IWmsAreaService extends IService<WmsArea> {
      * @return
      */
     boolean isEnoughSize(List<WmsArea> wmsAreaList, Integer allQuantity);
+
+    boolean isEnoughSizeWithLevel(List<WmsArea> waList, Integer goodsQuantity, String goodsLevel);
 }
